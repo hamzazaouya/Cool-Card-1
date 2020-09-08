@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(img/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif
+}
+
+.container {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 400px;
+    grid-gap: 2rem;
+}
+
+.box {
+    position: relative;
+    background-color: #FFF;
+    overflow: hidde;
+    text-align: center;
+}
+
+.pic {
+    position: relative;
+    height: 130px;
+    width: 130px;
+    margin: 2rem auto;
+    background-color: #ec1769;
+    border-radius: 50%;
+}
+
+.pic::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: 135%;
+    height: 0px;
+    background-color: #ec1769;
+    transform: scale(3);
+    transition: .3s
+}
+
+.box:hover .pic::before {
+    height: 100%;
+    border-radius: 50%;
+}
+
+.pic img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.box:hover .pic img{
+    box-shadow: 0 0 0 14px #FFF;
+    transform: scale(.7)
+}
+
+.content {
+    padding-top: 2rem;
+}
+
+.content h2 {
+    font-size: 2.5rem;
+}
+
+.content p {
+    font-weight: bold;
+}
+
+.social {
+    height: 3rem;
+    width: 100%;
+    position: absolute;
+    bottom: -3rem;
+    left: 0;
+    background-color: #ec1769;
+    transition: .7s;
+}
+
+.box:hover .social {
+    bottom: 0;
+}
+
+.social ul {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0 auto;
+}
+
+.social ul li {
+    margin: 0 .3rem;
+    border-radius: 5px;
+    width: 100%;
+    transition: .3s;
+}
+
+.social ul li:hover {
+    background-color: #FFF;
+}
+
+
+.social ul a {
+    color: #FFF;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: .3s;
+}
+
+.social ul li:hover a {
+    color: #000;
+}
